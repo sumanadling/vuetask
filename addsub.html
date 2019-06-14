@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<title>popup window</title>
+<head>
+  <link rel="stylesheet" href="addsub.css">
+  <script type="text/javascript" src="addsub.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container" id="add_sub">
+    <h1 class="text-white bg-grey text-center">botstrap Modal</h1>
+    <button class="btn btn-success" data-target="#mymodal" data-toggle="modal">Add Subject </button>
+
+
+<div class="modal" id="mymodal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="text-center text-primary">Add Subject</h3>
+
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+      </div>
+      <div class="modal-body">
+        <form action="" method="post" >
+
+          <div class="form-group">
+            <table cellpadding=10 id="sb">
+
+              <tr>
+                <td>Class:</td>
+                <td><select  name="cls" >
+                  <option value="10th">10</option>
+                  <option value="11th">11</option>
+                  <option value="12th">12</option>
+                  <option value="B.E">BTech</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td>Subject Name:</td>
+                <td><select  name="cls">
+                  <option value="Maths">Maths</option>
+                  <option value="Science">Science</option>
+                  <option value="History">History</option>
+                  <option value="Geogrophy">Geogrophy</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td>Board:</td>
+                <td><select  name="cls">
+                  <option value="SSC">SSC</option>
+                  <option value="CBSC">CBSC</option>
+                  <option value="ICSC">ICSC</option>
+                  <option value="Amravati">Amravati</option>
+                </select></td>
+              </tr>
+
+            </table>
+          </div>
+
+        </form>
+
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button class="btn btn-danger " data-dismiss="modal" type="submit" name="button" onclick="addsub.js">OK</button>
+      </div>
+
+      </div>
+
+    </div>
+
+    </div>
+  </div>
+  <script type="text/javascript" src="addsub.js"></script>
+</body>
+</html>

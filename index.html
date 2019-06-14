@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dynamically Add or Remove Table Row Using VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" href="index1.css">
+   <style>
+       .trashIconContainer {
+           vertical-align: middle iimportant;
+           padding-top: 10px;
+           text-align: center;
+       }
+       .trashIconContainer i {
+           color: red;
+       }
+       </style>
+    </head>
+
+<body>
+
+
+    <!-- VueJs app will mounted here-->
+    <div id="app">
+            <h1>Subject List</h1>
+
+    <table>
+        <head>
+            <tr>
+                <th scope="col">Sr.No</th>
+                <th scope="col">Subject ID</th>
+                <th scope="col">Subject Name</th>
+                <th scope="col text-right">Class</th>
+                <th scope="col text-right">Board</th>
+                <th scope="col text-right">Action</th>
+
+                </tr>
+            </head>
+
+<tr v-for="(invoice_product, k) in invoice_products" :key="k">
+        <td>
+                <input class="form-control" type="text" size="2" v-model="invoice_product.Sr_no" />
+            </td>
+
+        <!--td scope="row" class="trashIconContainer">
+            <i class="far fa-trash-alt"></i>
+        </td-->
+        <td>
+                <input class="form-control" type="text" v-model="invoice_product.subject_id" />
+            </td>
+
+        <td>
+            <input class="form-control" type="text" v-model="invoice_product.subject_name" />
+        </td>
+        <td>
+            <input class="form-control" type="text" v-model="invoice_product.class" />
+        </td>
+        <td>
+            <input class="form-control text-right" type="text" v-model="invoice_product.board" />
+        </td>
+        <td>
+            <input class="form-control text-right" type="text"  v-model="invoice_product.action" @change="calculateLineTotal(invoice_product)"
+            />
+        </td>
+       </tr>
+
+        </table>
+        <button  type='button' class="btn btn-info" @click="addNewRow">
+                <i class="fas fa-plus-circle"></i>
+                Add
+            </button >
+            <button type='button' class="btn btn-info" @click="deleteRow">
+                    <i class="fas fa-plus-circle"></i>
+                    delete
+                </button>
+
+    </div>
+<script>
+ var app = new Vue({
+      el: "#app",
+      data:{
+        invoice_products: [{
+                product_no: '',
+                product_name: '',
+                product_price: '',
+                product_qty: '',
+                line_total: 0
+    }]
+
+      },
+      methods:{
+        addNewRow() {
+            this.invoice_products.push({
+                product_no: '',
+                product_name: '',
+                product_price: '',
+                product_qty: '',
+                line_total: 0
+            });
+        },
+        deleteRow() {
+            this.invoice_products.pop({
+                product_no: '',
+                product_name: '',
+                product_price: '',
+                product_qty: '',
+                line_total: 0
+            });
+        }
+      }
+    });
+             </script>
+</body>
+
+</html>
